@@ -11,6 +11,7 @@ from server import server
 among_var = ["amogus", "among us", "amongus"]
 all_among_words = ["vent", "imposter", "sus",]
 amoji = '<:amoji:874539451504791553>'
+nice = ["69", "sixty nine"]
 client = discord.Client()
 @client.event
 async def on_ready():
@@ -30,6 +31,9 @@ async def on_message(message):
   
   if any(word in message.content.lower() for word in all_among_words):
     await message.channel.send(random.choice(among_reference))
+  
+  if any(word in message.content for word in nice):
+    await message.channel.send("nice")
   
   if message.content == "&bruh":
     await message.channel.send("Bruh")
